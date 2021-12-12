@@ -25,12 +25,10 @@ const ItemListContainer = (props) =>
         prom
             .then(()=>
             {
-                console.log("EXITO AL TRAER DATOS");
                 setListArr(preArrList);
             })
             .catch(()=>
             {
-                console.log("FALLO AL TRAER DATOS");
                 setListArr([]);
             })
     })

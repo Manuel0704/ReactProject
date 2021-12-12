@@ -1,0 +1,13 @@
+.Detail {
+  width: 90%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Detail .Detail__image {
+  width: 300px;
+  padding: 0px 20px;
+}
+/*# sourceMappingURL=ItemDetail.css.map */

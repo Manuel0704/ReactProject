@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,oBAAoB,CACpB;EACI,MAAM,EAAE,QAAQ;EAChB,OAAO,EAAE,QAAQ;EACjB,gBAAgB,EAAE,kBAAkB;CACvC",
+    "sources": [
+        "ItemDetailContainer.scss"
+    ],
+    "names": [],
+    "file": "ItemDetailContainer.css"
+}
