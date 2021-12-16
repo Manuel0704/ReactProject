@@ -1,17 +1,17 @@
 import ItemDetail from '../ItemDetail/ItemDetail'
 import {useEffect, useState} from 'react'
+import { useParams } from 'react-router-dom'
 import "./estilos/ItemDetailContainer.css"
 
-
-const getItem = () =>
+const getItem = (pId) =>
 {
     return new Promise((res, rej) => 
     {
         setTimeout(() =>
         {
-            if (fetch('https://my-json-server.typicode.com/Manuel0704/MyFakeJSONS/items/1') !== undefined)
+            if (fetch(`https://rickandmortyapi.com/api/character/${pId}`) !== undefined)
             {
-                res(fetch('https://my-json-server.typicode.com/Manuel0704/MyFakeJSONS/items/1'));
+                res(fetch(`https://rickandmortyapi.com/api/character/${pId}`));
             }
             else
             {
@@ -23,24 +23,37 @@ const getItem = () =>
 
 const ItemDetailContainer = () =>
 {
+    const {id} = useParams();
+
     const [item, setItem] = useState(null);
     
     useEffect(() =>
     {
-        getItem()
-        .then((res) => {return res.json()})
-        .then((json) => setItem(json))
-    })
+        if (!id)
+        {
+            getItem(1)
+            .then((res) => {return res.json()})
+            .then((json) => setItem(json))
+        }
+        else
+        {
+            console.log(id);
+            getItem(id)
+            .then((res) => {return res.json()})
+            .then((json) => setItem(json))
+        }
+    }, [id])
 
-    if (item == null)
-    {
-        return <div className="ItemDetailContainer">
+    if (item !== null)
+        return (
+        <div className="ItemDetailContainer">
+            <ItemDetail obj={item}/>
+        </div>)
+    else
+        return (
+        <div className="ItemDetailContainer">
             <p>Esperando...</p>
-        </div>
-    }
-    else return <div className="ItemDetailContainer">
-        <ItemDetail obj={item}/>
-    </div>
+        </div>)
 }
 
 export default ItemDetailContainer;

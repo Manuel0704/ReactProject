@@ -7,9 +7,13 @@ const ItemDetail = (props) =>
             <img className="Detail__image" src={props.obj.image} alt="imagen producto" />
         </div>
         <div className="Detail__data">
-            <p>{props.obj.title}</p>
-            <p>{props.obj.description}</p>
-            <p>{props.obj.price}</p>
+            <p>{props.obj.name}</p>
+            <p>
+                {props.obj.status}<br/>
+                {props.obj.gender}<br/>
+                {props.obj.species}<br/>
+            </p>
+            <p>{props.obj.episode.length}</p>
         </div>
     </div>
 }

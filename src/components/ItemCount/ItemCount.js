@@ -26,9 +26,13 @@ const Counter = (props) =>
 
     return <div className="ItemCounter">
         <div className="ItemCounter__counter">
-            <button onClick={IncreaseCant} type="button" className="btn btn-primary"><i className="fas fa-plus"></i></button>
+            <button onClick={DecreaseCant} type="button" className="btn btn-primary d-flex">
+                <box-icon name='minus' color='#ffffff'></box-icon>
+            </button>
             <p className="ItemCounter__cant">{counter}</p>
-            <button onClick={DecreaseCant} type="button" className="btn btn-primary"><i className="fas fa-minus"></i></button>
+            <button onClick={IncreaseCant} type="button" className="btn btn-primary d-flex">
+                <box-icon name='plus' color='#ffffff' ></box-icon>
+            </button>
         </div>
     </div>
 }
