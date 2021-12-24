@@ -1,13 +1,16 @@
 import NavBar from './components/NavBar/NavBar'
 import Main from './components/Main/Main'
+import CartContext from './components/CartContext/CartContext';
 import { BrowserRouter} from 'react-router-dom';
 
 function App()
 {
   return (
     <BrowserRouter>
-      <NavBar/>
-      <Main/>
+      <CartContext>
+        <NavBar/>
+        <Main/>
+      </CartContext>
     </BrowserRouter>);
 }
 

@@ -1,4 +1,3 @@
-import {useState} from 'react'
 import "./estilos/ItemCount.css"
 
 const Counter = (props) =>
