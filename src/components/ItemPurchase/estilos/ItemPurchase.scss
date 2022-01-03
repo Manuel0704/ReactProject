@@ -1,0 +1,38 @@
+.PurchaseItem
+{
+    background-color: rgba(0, 0, 0, 0.1);
+    color: black;
+    border-radius: 40px;
+    width: 90%;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.PurchaseItem__title
+{
+    margin: 0;
+    padding: 10px 0px;
+}
+
+.PurchaseItem__quantity
+{
+    margin: 0;
+    padding: 10px 0px;
+}
+
+.PurchaseItem__removeButton
+{
+    color: white;
+    background-color: rgb(20, 20, 90);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 40px;
+    &:hover
+    {
+        background-color: rgb(41, 41, 165);
+    }
+}

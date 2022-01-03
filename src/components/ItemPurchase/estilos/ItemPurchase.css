@@ -1,0 +1,42 @@
+.PurchaseItem {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+  border-radius: 40px;
+  width: 90%;
+  padding: 20px;
+  margin: auto;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.PurchaseItem__title {
+  margin: 0;
+  padding: 10px 0px;
+}
+
+.PurchaseItem__quantity {
+  margin: 0;
+  padding: 10px 0px;
+}
+
+.PurchaseItem__removeButton {
+  color: white;
+  background-color: #14145a;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 40px;
+}
+
+.PurchaseItem__removeButton:hover {
+  background-color: #2929a5;
+}
+/*# sourceMappingURL=ItemPurchase.css.map */

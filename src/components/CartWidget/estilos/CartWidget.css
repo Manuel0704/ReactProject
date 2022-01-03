@@ -1,11 +1,19 @@
-.botonCart {
+.CartWidget {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
   background-color: transparent;
   color: white;
   border: none;
   border-radius: 40px;
 }
 
-.botonCart:hover {
+.CartWidget:hover {
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.CartWidget--Hidden {
+  display: none;
 }
 /*# sourceMappingURL=CartWidget.css.map */

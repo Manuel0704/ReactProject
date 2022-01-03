@@ -17,11 +17,11 @@ const ItemListContainer = (props) =>
         {
             if (!id)
             {
-                fetch("https://rickandmortyapi.com/api/character").then((res) => {return res.json()}).then((res) => { console.log(res); setListArr(res)})                
+                fetch("https://rickandmortyapi.com/api/character").then((res) => {return res.json()}).then((res) => {setListArr(res)})                
             }
             else
             {
-                fetch(`https://rickandmortyapi.com/api/character/?species=${id}`).then((res) => {return res.json()}).then((res) => {console.log(res); setListArr(res)})
+                fetch(`https://rickandmortyapi.com/api/character/?species=${id}`).then((res) => {return res.json()}).then((res) => {setListArr(res)})
             }
         }, 2000)
     }, [id])

@@ -1,5 +1,7 @@
-.botonCart
+.CartWidget
 {
+    display: flex;
+    padding: 5px;
     background-color: transparent;
     color: white;
     border: none;
@@ -8,4 +10,9 @@
     {
         background-color: rgba(0, 0, 0, 0.5);
     }
+}
+
+.CartWidget--Hidden
+{
+    display: none;
 }

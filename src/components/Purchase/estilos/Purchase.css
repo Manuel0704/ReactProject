@@ -1,0 +1,14 @@
+.Purchase {
+  margin-top: 15px;
+}
+
+.Purchase__empty {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.Purchase__text {
+  font-size: 24px;
+  font-weight: bold;
+}
+/*# sourceMappingURL=Purchase.css.map */

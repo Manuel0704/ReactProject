@@ -1,56 +1,50 @@
-import { useState, createContext } from "react";
+import { createContext, useReducer } from "react";
 
-export const cartContext = createContext();
+const cartContext = createContext();
 const {Provider} = cartContext;
+
+const types =
+{
+    addItem: 'addItem',
+    removeItem: 'removeItem',
+    clearCart: 'clearCart',
+}
+
+const reducer = (state, action) =>
+{
+    let newState = state;
+
+    switch (action.type)
+    {
+        case types.addItem:
+            if (state.some(item => item.id === action.payload.id) === false) //si no esta en el carrito se agrega al estado Cart
+                return [...newState, action.payload];
+            else //si esta, encontramos la ubicacion del producto en el array y aumentamos su cantidad
+            {
+                newState[newState.findIndex(item => item.id === action.payload.id)].quantity += action.payload.quantity;
+                return newState;
+            }
+
+        case types.removeItem:
+            newState = state.filter(item => item.id !== action.payload.id);
+            return newState;
+
+        case types.clearCart:
+            return [];
+
+        default:
+            return state;
+    }
+}
 
 const CartContext = ({children}) =>
 {
-    const [Cart, SetCart] = useState([]);
+    const [Cart, dispatch] = useReducer(reducer, []);
 
-    const AddItem = (product) =>
-    {
-        if (IsInCart(product.id) === false) //si no esta en el carrito se agrega al estado Cart
-        {
-            let newCart = Cart;
-            newCart.push(product);
-            SetCart(newCart);
-        }
-        else //si esta, encontramos la ubicacion del producto en el array y aumentamos su cantidad
-        {
-            let newCart = Cart;
-            newCart.forEach( element =>
-            {
-                if (element.id === product.id) element.quantity += product.quantity
-            });
-            SetCart(newCart);
-        }
-    }
+    let TotalItems = 0;
+    Cart.forEach(item => TotalItems += item.quantity);
 
-    const RemoveItem = (product) =>
-    {
-        Cart.forEach( iProduct =>
-        {
-            if (iProduct.id === product.id)
-            {
-                const idItem = Cart.indexOf(iProduct);
-                let newCart = Cart;
-                newCart.splice(idItem);
-                SetCart(newCart);
-            }
-        });
-    }
-
-    const ClearCart = () =>
-    {
-        SetCart([]);
-    }
-
-    const IsInCart = (pId) =>
-    {
-        return Cart.some(item => item.id === pId)
-    }
-
-    const CartValue = {Cart, AddItem, RemoveItem, ClearCart};
+    const CartValue = {Cart, TotalItems, dispatch, types};
 
     return (
         <Provider value={CartValue}>
@@ -59,4 +53,5 @@ const CartContext = ({children}) =>
     )
 }
 
-export default CartContext
+export {cartContext};
+export default CartContext;

@@ -6,15 +6,16 @@ import { Link } from "react-router-dom"
 const ItemDetail = (props) =>
 {
     const [Cant, setCant] = useState(1);
-    const cartPurchase = useContext(cartContext);
+    const {dispatch, types} = useContext(cartContext);
 
-    let objProduct = {
+    let objProduct = 
+    {
         id: props.obj.id,
         name: props.obj.name,
         price: props.obj.episode.length,
         stock: props.obj.episode.length,
-        quantity: Cant};
-
+        quantity: Cant
+    };
 
     const IncreaseCant = (val) =>
     {
@@ -46,7 +47,11 @@ const ItemDetail = (props) =>
                 val={Cant}
                 onAdd={val => IncreaseCant(val)}
                 onReduce={val => DecreaseCant(val)}/>
-            <Link to={"/item/cart"} onClick={() => {cartPurchase.AddItem(objProduct)}}>Comprar</Link>
+            <Link
+                to={"/item/cart"}
+                onClick={() => dispatch({type: types.addItem, payload: objProduct})}>
+                Comprar
+            </Link>
         </div>
     </div>)
 }
