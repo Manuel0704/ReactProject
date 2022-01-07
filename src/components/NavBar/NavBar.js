@@ -19,16 +19,16 @@ const Header = () =>
                         <NavLink to="/">Inicio<span className="sr-only">(current)</span></NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/categoria/human">Humanos</NavLink>
+                        <NavLink to="/categoria/Human">Humanos</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/categoria/alien">Aliens</NavLink>
+                        <NavLink to="/categoria/Alien">Aliens</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/categoria/humanoid">Humanoides</NavLink>
+                        <NavLink to="/categoria/Humanoid">Humanoides</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/categoria/mythological%20creature">Criaturas mitológicas</NavLink>
+                        <NavLink to="/categoria/Mythological Creature">Criaturas mitológicas</NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink to="/categoria/unknown">Desconocido</NavLink>

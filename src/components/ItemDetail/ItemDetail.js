@@ -3,6 +3,7 @@ import "./estilos/ItemDetail.css"
 import { useState, useContext } from 'react'
 import { cartContext } from "../CartContext/CartContext"
 import { Link } from "react-router-dom"
+
 const ItemDetail = (props) =>
 {
     const [Cant, setCant] = useState(1);

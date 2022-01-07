@@ -11,7 +11,6 @@ const Purchase = () =>
     console.log("Render");
 
     return (
-        //EL ERROR ESTA EN EL METODO REMOVE ITEM, HACE EFECTIVAMENTE EL SETCART, SI EMBARGO, NO RE-RENDERIZA EL COMPONENTE A MENOS QUE PONGA DIRECTAMENTE SET CART EN EL COMPONENTE CONSUMER
         <div className="Purchase">
             {Cart.length > 0
                 ?

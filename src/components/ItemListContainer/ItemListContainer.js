@@ -1,56 +1,46 @@
 import ItemList from '../ItemList/ItemList'
 import {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
+import { db} from '../Firebase/Firebase'
+import { collection, getDocs, limit, query, where } from 'firebase/firestore'
 
 const ItemListContainer = (props) =>
 {
     const {id} = useParams();
-
+    console.log(id);
     let [ListArr, setListArr] = useState(undefined);
-
-    console.log("RECARGANDO")
+    
+    console.log("RECARGANDO");
     
     useEffect(() =>
     {
-        console.log("RESOLICITANDO")
+        console.log("RESOLICITANDO");
+        
         setTimeout(() =>
         {
-            if (!id)
-            {
-                fetch("https://rickandmortyapi.com/api/character").then((res) => {return res.json()}).then((res) => {setListArr(res)})                
-            }
-            else
-            {
-                fetch(`https://rickandmortyapi.com/api/character/?species=${id}`).then((res) => {return res.json()}).then((res) => {setListArr(res)})
-            }
-        }, 2000)
+            let arrItems = [];
+            let productos = (id 
+                ? query(collection(db, "items"), where("species", "==", id), limit(20)) 
+                : query(collection(db, "items"), where("id", "<", 21)))
+            let itemsPromise = getDocs(productos);
+            itemsPromise
+                .then(resultado => resultado.forEach(item => arrItems.push(item.data()))).then(() => setListArr(arrItems));
+            itemsPromise
+                .catch(() => console.log("ERROR AL TRAER DATOS"));
+        }, 1000)
+
     }, [id])
 
-    if (ListArr !== undefined)
-    {
-        return <div className="ListContainer">
+    return (
+        <div className="ListContainer">
             <div className="ListContainer__title">
                 <h2 className="ListContainer__text">{props.greeting}</h2>
             </div>
-
             <div className="container">
-                <ItemList list={ListArr.results}/>
+                { (ListArr !== undefined) ? <ItemList list={ListArr}/> : <p>Esperando...</p>}
             </div>
-        </div>  
-    }
-    else
-    {
-        return <div className="ListContainer">
-        <div className="ListContainer__title">
-            <h2 className="ListContainer__text">{props.greeting}</h2>
         </div>
-
-        <div className="container">
-            Esperando...
-        </div>
-    </div>  
-
-    }
+    )
 }
 
 export default ItemListContainer;
