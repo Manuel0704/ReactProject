@@ -1,13 +1,12 @@
 import ItemList from '../ItemList/ItemList'
 import {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
-import { db} from '../Firebase/Firebase'
+import { db } from '../Firebase/Firebase'
 import { collection, getDocs, limit, query, where } from 'firebase/firestore'
 
 const ItemListContainer = (props) =>
 {
     const {id} = useParams();
-    console.log(id);
     let [ListArr, setListArr] = useState(undefined);
     
     console.log("RECARGANDO");

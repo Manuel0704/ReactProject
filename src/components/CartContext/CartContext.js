@@ -44,7 +44,10 @@ const CartContext = ({children}) =>
     let TotalItems = 0;
     Cart.forEach(item => TotalItems += item.quantity);
 
-    const CartValue = {Cart, TotalItems, dispatch, types};
+    let TotalPrice = 0;
+    Cart.forEach(item => TotalPrice += (item.price * item.quantity))
+
+    const CartValue = {Cart, TotalItems, TotalPrice, dispatch, types};
 
     return (
         <Provider value={CartValue}>

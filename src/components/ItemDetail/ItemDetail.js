@@ -13,7 +13,7 @@ const ItemDetail = (props) =>
     {
         id: props.obj.id,
         name: props.obj.name,
-        price: props.obj.episode.length,
+        price: 10,
         stock: props.obj.episode.length,
         quantity: Cant
     };

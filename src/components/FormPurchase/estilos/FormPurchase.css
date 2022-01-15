@@ -1,0 +1,41 @@
+.MiForm .MiForm__title {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.MiForm .MiForm__field {
+  padding: 10px;
+}
+
+.MiForm .MiForm__field--hidden {
+  display: none;
+}
+
+.MiForm .MiForm__input {
+  margin: auto;
+  display: block;
+  width: 50%;
+  border: none;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.MiForm .MiForm__button {
+  margin: auto;
+  display: block;
+  width: 50%;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 40px;
+  padding: 10px 20px;
+  background-color: black;
+}
+
+.MiForm .MiForm__button:hover {
+  background-color: #171a3f;
+}
+/*# sourceMappingURL=FormPurchase.css.map */

@@ -1,4 +1,5 @@
 import ItemPurchase from "../ItemPurchase/ItemPurchase"
+import FormPurchase from "../FormPurchase/FormPurchase"
 import { cartContext } from "../CartContext/CartContext"
 import { useContext } from "react";
 import { Link } from "react-router-dom";
@@ -14,7 +15,10 @@ const Purchase = () =>
         <div className="Purchase">
             {Cart.length > 0
                 ?
-                Cart.map(prod => <ItemPurchase key={prod.id} product={prod}/>)
+                <>
+                    {Cart.map(prod => <ItemPurchase key={prod.id} product={prod}/>)}
+                    <FormPurchase/>
+                </>
                 :
                 <div className="Purchase__empty">
                     <p className="Purchase__text">Aún no seleccionaste productos!</p>
