@@ -11,6 +11,8 @@
 
 .CartWidget:hover {
   background-color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  color: white;
 }
 
 .CartWidget--Hidden {

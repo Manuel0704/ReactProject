@@ -1,0 +1,12 @@
+.card {
+  background-color: #151535;
+}
+
+.card .card-body {
+  color: white;
+}
+
+.card .card-title {
+  font-weight: bold;
+}
+/*# sourceMappingURL=Card.css.map */

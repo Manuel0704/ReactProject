@@ -9,3 +9,23 @@
         color: white;
     }
 }
+
+.CustomNavbar
+{
+    width: 100%;
+    .CustomNavbar__list
+    {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0px 40px;
+    }
+    .CustomNavbar__item
+    {
+        color: white;
+    }
+}
+
+.navbar
+{
+    background-color: rgb(21, 21, 53) !important;
+}

@@ -13,25 +13,25 @@ const Header = () =>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarText">
-                <ul className="navbar-nav mr-auto">
+            <div className="CustomNavbar collapse navbar-collapse" id="navbarText">
+                <ul className="CustomNavbar__list navbar-nav mr-auto">
                     <li className="nav-item">
-                        <NavLink to="/">Inicio<span className="sr-only">(current)</span></NavLink>
+                        <NavLink className={"CustomNavbar__item"} to="/">Inicio</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/categoria/Human">Humanos</NavLink>
+                        <NavLink className={"CustomNavbar__item"} to="/categoria/Human">Humanos</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/categoria/Alien">Aliens</NavLink>
+                        <NavLink className={"CustomNavbar__item"} to="/categoria/Alien">Aliens</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/categoria/Humanoid">Humanoides</NavLink>
+                        <NavLink className={"CustomNavbar__item"} to="/categoria/Humanoid">Humanoides</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/categoria/Mythological Creature">Criaturas mitológicas</NavLink>
+                        <NavLink className={"CustomNavbar__item"} to="/categoria/unknown">Desconocido</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/categoria/unknown">Desconocido</NavLink>
+                        <NavLink className={"CustomNavbar__item"} to="/categoria/Mythological Creature">Criaturas mitológicas</NavLink>
                     </li>
                 </ul>
             </div>

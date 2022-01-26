@@ -8,7 +8,7 @@ const CartIcon = () =>
     const { TotalItems } = useContext(cartContext)
 
     return (
-        <Link className={ TotalItems > 0 ? "CartWidget" : "CartWidget CartWidget--Hidden"} to={"/item/cart"}>
+        <Link className={ TotalItems > 0 ? "CartWidget" : "CartWidget CartWidget--Hidden"} to={"/cart"}>
             <box-icon name='cart' type='solid' color='#ffffff' ></box-icon>
             <span>{TotalItems}</span>
         </Link>

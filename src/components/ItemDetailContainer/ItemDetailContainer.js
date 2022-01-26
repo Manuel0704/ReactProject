@@ -9,7 +9,12 @@ const getItem = (pId) =>
 {
     const queryCollection = query(collection(db, "items"), where("id", "==" , pId));
     return new Promise ((res, rej) =>
-        setTimeout(() => res(getDocs(queryCollection)), 1000))
+        setTimeout(() =>
+        {
+            getDocs(queryCollection)
+                .then(suc => res(suc))
+                .catch(err => rej(err))
+        }, 1000))
 }
 
 const ItemDetailContainer = () =>
@@ -20,13 +25,32 @@ const ItemDetailContainer = () =>
     useEffect(() =>
     {
         getItem(parseInt(id))
-            .then(val => {return val})
-            .then(fu => fu.forEach(i => setItem(i.data())));        
+            .then(val =>
+            {
+                if(!val.empty) return val;
+                else setItem(false);
+            })
+            .then(val => { if (val !== undefined) val.forEach(i => setItem(i.data())) } )
     }, [id])
+
+    const GetJSXByItem = () =>
+    {
+        if (Item === null)
+            return (
+                <div className="ItemDetailContainer__waitingBox">
+                    <p className="ItemDetailContainer__waitingText">Esperando...</p>
+                </div>)
+        return !Item
+        ?
+            <div className="ItemDetailContainer__errorBox">
+                <p className="ItemDetailContainer__errorText">No existe el producto!</p>
+            </div>
+        : <ItemDetail obj={Item}/>
+    }
 
     return (
         <div className="ItemDetailContainer">
-            {Item !== null ? <ItemDetail obj={Item}/> : <p>Esperando...</p>}
+            {GetJSXByItem()}
         </div>
     )
 }

@@ -2,5 +2,35 @@
 {
     margin: 15px 0px;
     padding: 20px 0px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgb(21, 21, 53);
+    .ItemDetailContainer__waitingBox
+    {
+        display: flex;
+        justify-content: center;
+        background-color: #0f976a;
+        padding: 20px 0px;
+        height: 100%;
+    }
+    .ItemDetailContainer__waitingText
+    {
+        margin: 0;
+        font-size: 36px;
+        font-weight: bold;
+        color: white;
+    }
+    .ItemDetailContainer__errorBox
+    {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(206, 13, 13);
+        padding: 20px 0px;
+        height: 100%;
+    }
+    .ItemDetailContainer__errorText
+    {
+        margin: 0;
+        font-size: 36px;
+        font-weight: bold;
+        color: white;
+    }
 }

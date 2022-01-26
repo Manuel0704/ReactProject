@@ -22,7 +22,7 @@ const reducer = (state, action) =>
             else //si esta, encontramos la ubicacion del producto en el array y aumentamos su cantidad
             {
                 newState[newState.findIndex(item => item.id === action.payload.id)].quantity += action.payload.quantity;
-                return newState;
+                return [...newState];
             }
 
         case types.removeItem:

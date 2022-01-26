@@ -8,4 +8,24 @@
   font-weight: bold;
   color: white;
 }
+
+.CustomNavbar {
+  width: 100%;
+}
+
+.CustomNavbar .CustomNavbar__list {
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0px 40px;
+}
+
+.CustomNavbar .CustomNavbar__item {
+  color: white;
+}
+
+.navbar {
+  background-color: #151535 !important;
+}
 /*# sourceMappingURL=NavBar.css.map */

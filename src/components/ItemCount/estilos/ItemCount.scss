@@ -3,20 +3,23 @@
     display: flex;
     flex-direction: column;
     width: 200px;
-    padding: 10px;
-    margin: 0 auto;
-    // background-color: rgb(139, 199, 199);
+    margin: 10px auto;
     .ItemCounter__counter
     {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 5px;
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.5);
         border-radius: 5px;
     }
     .ItemCounter__cant
     {
         margin: 0;
     }
+}
+.btn-primary
+{
+    border: none;
+    background-color: #0f976a;
 }

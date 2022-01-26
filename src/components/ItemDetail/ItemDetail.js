@@ -4,54 +4,48 @@ import { useState, useContext } from 'react'
 import { cartContext } from "../CartContext/CartContext"
 import { Link } from "react-router-dom"
 
-const ItemDetail = (props) =>
+const ItemDetail = ({obj}) =>
 {
     const [Cant, setCant] = useState(1);
+    const [Shown, setShown] = useState(false);
     const {dispatch, types} = useContext(cartContext);
 
     let objProduct = 
     {
-        id: props.obj.id,
-        name: props.obj.name,
-        price: 10,
-        stock: props.obj.episode.length,
+        id: obj.id,
+        name: obj.name,
+        price: obj.price,
+        stock: obj.episode.length,
         quantity: Cant
     };
-
-    const IncreaseCant = (val) =>
-    {
-        setCant(val + 1);
-    }
-
-    const DecreaseCant = (val) =>
-    {
-        if (val > 0)
-            setCant(val - 1);
-    }
 
     return (
     <div className="Detail">
         <div className="Detail__visual">
-            <img className="Detail__image" src={props.obj.image} alt="imagen producto" />
+            <img className="Detail__image" src={obj.image} alt="imagen producto" />
         </div>
         <div className="Detail__data">
-            <p>{props.obj.name}</p>
+            <p className="Detail__title">{obj.name}</p>
             <p>
-                {props.obj.status}<br/>
-                {props.obj.gender}<br/>
-                {props.obj.species}<br/>
+                {obj.status}<br/>
+                {obj.gender}<br/>
+                {obj.species}<br/>
             </p>
-            <p>{props.obj.episode.length}</p>
+            <p className="Detail__price"><b>Precio:</b> S/{obj.price}</p>
             <ItemCount
                 show={Cant < objProduct.stock ? false : true}
                 stock={objProduct.stock}
                 val={Cant}
-                onAdd={val => IncreaseCant(val)}
-                onReduce={val => DecreaseCant(val)}/>
-            <Link
-                to={"/item/cart"}
-                onClick={() => dispatch({type: types.addItem, payload: objProduct})}>
-                Comprar
+                onAdd={val => setCant(val + 1)}
+                onReduce={val => {if (val > 0) {setCant(val - 1)}}}/>
+            <button
+                type="button"
+                className="btn btn-primary"
+                onClick={() => { dispatch({type: types.addItem, payload: objProduct}); setShown(true); } }>
+                Añadir a carrito
+            </button>
+            <Link type="button" className={Shown? "btn btn-info dark margin10" : "hidden"} to={"/cart"}>
+                Ir a carrito
             </Link>
         </div>
     </div>)

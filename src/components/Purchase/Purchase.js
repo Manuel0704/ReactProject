@@ -7,9 +7,7 @@ import "./estilos/Purchase.css"
 
 const Purchase = () =>
 {
-    const {Cart} = useContext(cartContext);
-
-    console.log("Render");
+    const {Cart, TotalItems, TotalPrice} = useContext(cartContext);
 
     return (
         <div className="Purchase">
@@ -17,6 +15,10 @@ const Purchase = () =>
                 ?
                 <>
                     {Cart.map(prod => <ItemPurchase key={prod.id} product={prod}/>)}
+                    <div className="Purchase__totals">
+                        <p><b>Cantidad Total:</b> {TotalItems}</p>
+                        <p><b>Precio Total:</b> S/{TotalPrice}</p>
+                    </div>
                     <FormPurchase/>
                 </>
                 :

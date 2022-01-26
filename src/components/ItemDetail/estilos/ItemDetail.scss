@@ -3,9 +3,45 @@
     width: 90%;
     margin: auto;
     display: flex;
+    .Detail__visual
+    {
+        display: flex;
+        align-items: center;
+        padding: 0px 20px;
+    }
     .Detail__image
     {
         width: 300px;
+        border: solid rgb(15, 151, 106) 8px;
+    }
+    .Detail__title
+    {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .Detail__price
+    {
+        font-size: 18px;
+    }
+    .Detail__data
+    {
+        color: white;
         padding: 0px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .Detail__purchase
+    {
+        padding: 5px 20px;
+        background-color: black;
+    }
+    .margin10
+    {
+        margin-top: 10px;
+    }
+    .hidden
+    {
+        display: none;
     }
 }

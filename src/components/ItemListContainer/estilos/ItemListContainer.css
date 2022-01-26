@@ -1,0 +1,62 @@
+.ListContainer .ListContainer__title {
+  background-color: #0f976a;
+  padding: 20px 40px;
+}
+
+.ListContainer .ListContainer__title .ListContainer__text {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+.ListContainer .ListContainer__waitingBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #151535;
+  padding: 20px 0px;
+}
+
+.ListContainer .ListContainer__waitingText {
+  margin: 0px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.ListContainer .ListContainer__errorBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ce0d0d;
+  padding: 20px 0px;
+}
+
+.ListContainer .ListContainer__errorText {
+  margin: 0px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.ListContainer .container {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.ListContainer .container .row {
+  margin: 0px;
+}
+
+.ListContainer .container .col-3 {
+  padding: 5px;
+}
+/*# sourceMappingURL=ItemListContainer.css.map */

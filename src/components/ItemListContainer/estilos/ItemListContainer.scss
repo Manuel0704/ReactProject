@@ -1,0 +1,61 @@
+.ListContainer
+{
+    .ListContainer__title
+    {
+        background-color: #0f976a;
+        padding: 20px 40px;
+        .ListContainer__text
+        {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    .ListContainer__waitingBox
+    {
+        display: flex;
+        justify-content: center;
+        background-color: #151535;
+        padding: 20px 0px;
+
+    }
+    .ListContainer__waitingText
+    {
+        margin: 0px;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .ListContainer__errorBox
+    {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(206, 13, 13);
+        padding: 20px 0px;
+    }
+    .ListContainer__errorText
+    {
+        margin: 0px;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    .container
+    {
+        margin-top: 20px;
+        padding: 20px;
+        .row
+        {
+            margin: 0px;
+        }
+        .col-3
+        {
+            padding: 5px;
+        }
+    }
+}

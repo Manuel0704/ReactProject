@@ -6,8 +6,55 @@
   display: flex;
 }
 
+.Detail .Detail__visual {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 20px;
+}
+
 .Detail .Detail__image {
   width: 300px;
+  border: solid #0f976a 8px;
+}
+
+.Detail .Detail__title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.Detail .Detail__price {
+  font-size: 18px;
+}
+
+.Detail .Detail__data {
+  color: white;
   padding: 0px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Detail .Detail__purchase {
+  padding: 5px 20px;
+  background-color: black;
+}
+
+.Detail .margin10 {
+  margin-top: 10px;
+}
+
+.Detail .hidden {
+  display: none;
 }
 /*# sourceMappingURL=ItemDetail.css.map */
